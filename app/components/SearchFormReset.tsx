@@ -1,21 +1,20 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
+
 'use client'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React, { use } from 'react'
+import Link from 'next/link';
 
 const SearchFormReset = () => {
 
   const reset = () => {
-    const form = document.querySelector(selector, ".search-form");
+    const form = document.querySelector(selectors, ".search-form") as
     HTMLFormElement;
     if (form) form.reset();
   };
 
   return (
     <button type="reset" onClick={reset}>
-      <link href="/" className="search-btn text-white">
+      <Link href="/" className="search-btn text-white">
           X
-      </link>
+      </Link>
     </button>
   );
 }

@@ -9,7 +9,7 @@ const SearchForm = () => {
   
   
   return (
-    <form action="/" onScroll={false} className='search-form'>
+    <form action="/" scroll={false} className='search-form'>
       <input
         name='query'
         defaultValue={query}
@@ -19,6 +19,10 @@ const SearchForm = () => {
 
       <div className='flex gap-2'>
         {query && <SearchFormReset />}
+
+        <button type='submit' className='search-btn text-white'>
+          S
+        </button>
       </div>
 
     </form>
