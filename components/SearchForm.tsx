@@ -1,15 +1,13 @@
+/* eslint-disable react/jsx-no-undef */
 import React from 'react'
+import Form from "next/form"
 import SearchFormReset from './SearchFormReset';
+import { Search } from 'lucide-react';
 
 
-const SearchForm = () => {
-  const query = "test";
-  
-  
-  
-  
+const SearchForm = ({ query }:{query?: string } ) => {
   return (
-    <form action="/" scroll={false} className='search-form'>
+    <Form action="/" scroll={false} className="search-form">
       <input
         name='query'
         defaultValue={query}
@@ -21,12 +19,14 @@ const SearchForm = () => {
         {query && <SearchFormReset />}
 
         <button type='submit' className='search-btn text-white'>
-          S
+          <Search className="size-5" />
+          
+
         </button>
       </div>
 
-    </form>
+    </Form>
   )
 }
 
-export default SearchForm
+export default SearchForm;
