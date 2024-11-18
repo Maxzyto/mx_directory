@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import SearchForm from "@/components/SearchForm"
 import StartupCard from '@/components/StartupCard';
 import { title } from 'process';
+import { StartupTypeCard } from '@/components/StartupCard';
 
 export default async function Home({ searchParams }: {
   searchParams: Promise<{ query?: string }>
@@ -11,7 +13,7 @@ export default async function Home({ searchParams }: {
     {
       _createdAt: new Date(),
       views: 55,
-      author: { _id: 1 },
+      author: { _Id: 1, name:"Maxwell" },
       _id: 1,
       description: "This is a description.",
       image:
@@ -40,7 +42,8 @@ export default async function Home({ searchParams }: {
         <ul className='mt-7 card_grid'>
           {
             posts?.length > 0 ? (
-              posts.map((post: StarupCardType, index: number) => (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              posts.map((post: StartupTypeCard, index: number) => (
                 <StartupCard key={post?._id} post={post} />
               ))
             ):(
